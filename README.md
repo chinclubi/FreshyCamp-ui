@@ -6,4 +6,4 @@
 3. `gulp`
 4. Enjoy!
 
->> Require [node js](https://nodejs.org/)
+> Require [node js](https://nodejs.org/)
