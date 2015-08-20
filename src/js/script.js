@@ -2,6 +2,7 @@
 var app = angular.module('freshyCampApp', [
   'ui.router',
   'ui.utils',
+  'mgcrea.ngStrap',
   'appController',
   'appService'
 ])

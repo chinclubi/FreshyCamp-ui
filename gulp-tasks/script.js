@@ -8,6 +8,8 @@ gulp.task('script', function () {
     './bower_components/angular-ui-router/release/angular-ui-router.js',
     './bower_components/angular-ui-utils/ui-utils.js',
     './bower_components/jquery/dist/jquery.js',
+    './bower_components/angular-strap/dist/angular-strap.min.js',
+    './bower_components/angular-strap/dist/angular-strap.tpl.min.js',
     './src/js/**/*.js'])
     .pipe(concat('scripts.js'))
     .pipe(uglify({mangle: true}))

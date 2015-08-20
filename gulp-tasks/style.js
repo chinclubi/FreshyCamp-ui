@@ -7,7 +7,8 @@ var browserSync = require('browser-sync')
 
 gulp.task('style', function () {
   return gulp.src([
-    './src/scss/*.scss'
+    './src/scss/*.scss',
+    './bower_components/angular-motion/dist/angular-motion.min.css'
   ])
     .pipe(libsass())
     .pipe(prefix('last 1 version', '> 1%', 'ie 10', 'ie 11', 'iOS 6', 'iOS 7', 'Android 4', {
