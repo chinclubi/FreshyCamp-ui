@@ -7,4 +7,12 @@
 4. `gulp`
 5. Enjoy!
 
+##Update
+1. `bower update`
+
+##Logs
+**8/20/2015**
+- Update bootstrap 4.0.0 alpha
+
+
 > Require [node js](https://nodejs.org/)
