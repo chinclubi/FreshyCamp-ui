@@ -1,6 +1,7 @@
 /* global angular */
 var app = angular.module('freshyCampApp', [
   'ui.router',
+  'ui.utils',
   'appController',
   'appService'
 ])
@@ -9,9 +10,16 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
   $urlRouterProvider.otherwise('/app')
 
   $stateProvider
-    .state('app', {
-      url: '/app',
-      templateUrl: 'templates/main.tmpl.html',
-      controller: 'mainController'
+    .state('pre-register', {
+    	url: '/app',
+    	templateUrl: 'templates/main.tmpl.html',
+     	controller: 'preRegisterController'
+    })
+
+    .state('random-mung',{
+    })
+
+    .state('annouce-mung',{
+
     })
 }])

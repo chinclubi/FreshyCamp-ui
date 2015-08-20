@@ -1,6 +1,7 @@
 /* global angular */
 var control = angular.module('appController', [])
 
-control.controller('mainController', ['$scope', function ($scope) {
+control.controller('preRegisterController', ['$scope', '$http', function ($scope, $http) {
   $scope.message = 'Welcome to Freshy Camp Registration.'
+  $http.get
 }])

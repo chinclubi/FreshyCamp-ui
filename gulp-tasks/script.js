@@ -6,6 +6,7 @@ var browserSync = require('browser-sync')
 gulp.task('script', function () {
   return gulp.src(['./bower_components/angular/angular.js',
     './bower_components/angular-ui-router/release/angular-ui-router.js',
+    './bower_components/angular-ui-utils/ui-utils.js',
     './bower_components/jquery/dist/jquery.js',
     './src/js/**/*.js'])
     .pipe(concat('scripts.js'))
