@@ -12,15 +12,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
   $urlRouterProvider.otherwise('/app')
 
   $stateProvider
-    .state('pre-register', {
+    .state('register', {
     	url: '/app',
     	templateUrl: 'templates/main.tmpl.html',
      	controller: 'preRegisterController'
     })
 
     .state('confirm-person',{
-    	url: '/app',
-    	templateUrl: 'templates/main.tmpl.html',
+    	url: '/person',
+    	templateUrl: 'templates/person.tmpl.html',
     	controller: 'confirmPersonController'
     })
 

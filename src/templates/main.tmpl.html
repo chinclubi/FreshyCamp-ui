@@ -1,10 +1,33 @@
 <div class="container">
-	<div class="row">
+Current UI = {{currentUI}}
+	<div id="main" class="row" ng-show="currentUI == 0">
 		<h1 class="text-center">{{message}}</h1>
-   		</br>
-   		<input id="name" class="form-control" ng-model="name" bs-options="name for name in names" placeholder="Enter your name or surname" bs-typeahead>
+		
+		</br>
+		<div class="form-group">
+			<input id="name" class="form-control" ng-model="name" bs-options="name for name in names"data-min-length="0" data-animation="am-flip-x"  placeholder="Enter your name or surname" bs-typeahead>
+			<center>
+				<button  ng-click="setCurrentUI(1)" class="btn btn-lg btn-success">register</button>
+			</center>
+		</div>
+		
+	</div>
+
+	<div id="confirm-person" class="row" ng-show="currentUI == 1">
+		<h1 class="text-center"> {{person.name}} </h1>
+		<h2 class="text-center"> {{person.division}} </h2>
 		<center>
-			<button ui-sref="confirm-person" class="btn btn-lg btn-primary">register</button>
+			<button ng-show="person.color == null" ng-click="setCurrentUI(2)" class="btn btn-lg btn-primary">สุ่มมุ้ง</button>	
+			<a ng-show="person.color == null" href="#" ng-click="setCurrentUI(0)" class="btn btn-block btn-lg btn-danger">มุ้งแดงงงงงงง </a>
 		</center>
 	</div>
+
+	<div id="annouce-mung" ng-show="currentUI == 2">
+		<h1 class="text-center"> มุ้งของ {{name}} ก็คือ  </h1>
+		<center>
+			<a href="#" ng-click="setCurrentUI(0)" class="btn btn-block btn-lg btn-danger">มุ้งแดงงงงงงง </a>	
+		</center>
+	</div>
+
+
 </div>
