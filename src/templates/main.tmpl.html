@@ -1,32 +1,35 @@
 <div class="container">
-Current UI = {{currentUI}}
+	<h1 class="text-center">{{message}}</h1>
 	<div id="main" class="row" ng-show="currentUI == 0">
-		<h1 class="text-center">{{message}}</h1>
-		
 		</br>
 		<div class="form-group">
 			<input id="name" class="form-control" ng-model="name" bs-options="name for name in names"data-min-length="0" data-animation="am-flip-x"  placeholder="Enter your name or surname" bs-typeahead>
-			<center>
-				<button  ng-click="setCurrentUI(1)" class="btn btn-lg btn-success">register</button>
+			<center style="padding-top:15px">
+				<button ng-click="setCurrentUI(1)" class="btn btn-lg btn-success">register</button>
 			</center>
 		</div>
 		
 	</div>
 
 	<div id="confirm-person" class="row" ng-show="currentUI == 1">
-		<h1 class="text-center"> {{person.name}} </h1>
-		<h2 class="text-center"> {{person.branch}} </h2>
+		<h2 class="text-center"> {{person.name}} </h2>
+		<h4 class="text-center"> {{person.branch}} </h4>
 		<center>
-			<button ng-show="color == null" ng-click="setCurrentUI(2)" class="btn btn-lg btn-primary">สุ่มมุ้ง</button>
-			<a ng-show="color != null" href="#" ng-click="setCurrentUI(0)" class="btn btn-block btn-lg btn-danger">มุ้งแดงงงงงงง </a>
+			<div ng-show="person.color == null" class="jumbotron card"></div>
+			<button ng-show="person.color == null" ng-click="setCurrentUI(2)" class="btn btn-lg btn-primary">สุ่มมุ้ง</button>
+			<h4 ng-show="person.color != null" href="#" ng-click="setCurrentUI(0)" >คุณอยู่มุ้ง : {{colors[person.color]}} </h4>
 		</center>
 	</div>
 
 	<div id="annouce-mung" ng-show="currentUI == 2">
 		<h1 class="text-center"> มุ้งของ {{name}} ก็คือ  </h1>
-		<center>
-			<a href="#" ng-click="setCurrentUI(0)" class="btn btn-block btn-lg btn-danger">มุ้งแดงงงงงงง </a>	
-		</center>
+		<div class="jumbotron getColor.en_name" ng-class="colorClass">
+			<center>
+				<p>มุ้ง{{getColor.th_name}}</p>
+				{{colorClass}}	
+			</center>
+			
+		</div>
 	</div>
 
 
