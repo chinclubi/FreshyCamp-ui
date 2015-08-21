@@ -15,9 +15,9 @@ Current UI = {{currentUI}}
 
 	<div id="confirm-person" class="row" ng-show="currentUI == 1">
 		<h1 class="text-center"> {{person.name}} </h1>
-		<h2 class="text-center"> {{person.division}} </h2>
+		<h2 class="text-center"> {{person.branch}} </h2>
 		<center>
-			<button ng-show="color == null" ng-click="setCurrentUI(2)" class="btn btn-lg btn-primary">สุ่มมุ้ง</button>	
+			<button ng-show="color == null" ng-click="setCurrentUI(2)" class="btn btn-lg btn-primary">สุ่มมุ้ง</button>
 			<a ng-show="color != null" href="#" ng-click="setCurrentUI(0)" class="btn btn-block btn-lg btn-danger">มุ้งแดงงงงงงง </a>
 		</center>
 	</div>

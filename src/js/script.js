@@ -19,6 +19,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     })
 
     .state('confirm-person',{
+    	parent: 'register',
     	url: '/person',
     	templateUrl: 'templates/person.tmpl.html',
     	controller: 'confirmPersonController'

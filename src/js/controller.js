@@ -18,36 +18,33 @@ appControl.controller('preRegisterController', ['$scope', '$http' , '$state' , '
     });
   $scope.setCurrentUI = function(current){
     $scope.currentUI = current;
-    $scope.all.forEach(function(name){
-      // console.log(name.name + "==" + $scope.name)
-      // console.log(name.name == $scope.name)
-      if(name.name == $scope.name){
-        // console.log(name.student_id)
-        console.log("http://localhost:3000/"+name.student_id);
-        $http.get("http://localhost:3000/"+name.student_id )
-        .success(function(object){
-          $scope.color=object[0].color;
-          console.log(object[0].color);
-        })
+    if(current==1){
+      $scope.all.some(function(name){
+        if(name.name == $scope.name){
+          $http.get("http://localhost:3000/"+name.student_id )
+          .success(function(object){
+            $scope.person = object[0];
+          })
 
-        return false;
-      }
-    })
+          return true;
+        }
+      })  
+    }
+    if(current == 2 ){
+      $http.post('localhost:3000/register', {id:$scope.person.student_id}).
+        then(function(response) {
+          console.log("hey");
+          // this callback will be called asynchronously
+          // when the response is available
+        }, function(response) {
+          console.log("fuck");
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+        });
+    }
+    
   }
 
   
   
 }])
-
-appControl.controller('confirmPersonController', ['$scope', '$http', function ($scope, $http) {
-  $scope.message = 'This is you right?.';
-  $scope.name="";
-  // $http.get("localhost:3000/all")
-  // 	.success(function(names){
-  // 		names.forEach(function(name){
-  // 			$scope.names.push(name.name);
-  // 		})
-  // 	});
-}])
-
-
