@@ -25,6 +25,10 @@ appControl.controller('preRegisterController', ['$scope', '$http' , '$state' , '
 
 
   $scope.setCurrentUI = function (current) {
+    if(current == 0){
+      $scope.message="Welcome to Freshy Camp Registration."
+      $scope.name= "";
+    }
     if (current == 1) {
       $scope.message="Is this you?"
       $scope.all.some(function (name) {

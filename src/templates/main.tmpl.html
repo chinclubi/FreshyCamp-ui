@@ -16,20 +16,23 @@
 		<h4 class="text-center"> {{person.branch}} </h4>
 		<center>
 			<div ng-show="person.color == null" class="jumbotron card"></div>
-			<button ng-show="person.color == null" ng-click="setCurrentUI(2)" class="btn btn-lg btn-primary">สุ่มมุ้ง</button>
+			<button ng-show="person.color == null" ng-click="setCurrentUI(2)" class="btn btn-lg btn-info">สุ่มมุ้ง</button>
 			<h4 ng-show="person.color != null" href="#" ng-click="setCurrentUI(0)" >คุณอยู่มุ้ง : {{colors[person.color]}} </h4>
+			<button ng-click="setCurrentUI(0)" class="btn btn-lg btn-default">Back</button>
 		</center>
 	</div>
 
 	<div id="annouce-mung" ng-show="currentUI == 2">
-		<h1 class="text-center"> มุ้งของ {{name}} ก็คือ  </h1>
-		<div class="jumbotron getColor.en_name" ng-class="colorClass">
+		<h2 class="text-center"> มุ้งของ {{name}} ก็คือ  </h2>
+		<div ng-click="setCurrentUI(0)" class="jumbotron getColor.en_name" ng-class="colorClass">
 			<center>
-				<p>มุ้ง{{getColor.th_name}}</p>
-				{{colorClass}}	
+				<h3>มุ้ง{{getColor.th_name}}</h3>
 			</center>
 			
 		</div>
+		<center>
+			<button ng-click="setCurrentUI(0)" class="btn btn-lg btn-default">Back</button>
+		</center>
 	</div>
 
 
