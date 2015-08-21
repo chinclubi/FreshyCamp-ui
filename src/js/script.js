@@ -2,6 +2,7 @@
 var app = angular.module('freshyCampApp', [
   'ui.router',
   'ui.utils',
+  'ngAnimate',
   'mgcrea.ngStrap',
   'appController',
   'appService'
@@ -17,7 +18,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
      	controller: 'preRegisterController'
     })
 
-    .state('random-mung',{
+    .state('confirm-person',{
+    	url: '/app',
+    	templateUrl: 'templates/main.tmpl.html',
+    	controller: 'confirmPersonController'
     })
 
     .state('annouce-mung',{
